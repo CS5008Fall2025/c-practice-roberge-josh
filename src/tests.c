@@ -11,7 +11,7 @@
 #include <stdlib.h> // standard library
 
 #include "cpractice.h" // header file for cpractice.c
-
+#include <assert.h>
 
 // this may help with some tests, as the array numbers match their index
 int * create_simple_array(int size) {
@@ -40,6 +40,7 @@ int test_swap_one() {
  * Tests the create_array_of_ints_fib function
 */
 int test_create_array_of_ints_fib() {
+
     printf("2. test_create_array_of_ints_fib()\n");
     int* arr = create_array_of_ints_fib(5);
     int expected[] = {1, 1, 2, 3, 5};
@@ -54,14 +55,86 @@ int test_create_array_of_ints_fib() {
     return 1;
 }
 
+int test_base_cases_fibs() {
+    printf("3. test base cases create_array_of_ints_fib()\n");
+    int* arr = create_array_of_ints_fib(0);
+    if (arr != NULL){
+        printf("failed Null basecase for fibs");
+        return 0;
+    };
+
+    arr = create_array_of_ints_fib(1);
+    if (arr[0] != 1){
+            return 0;
+        };
+
+    return 1;
+
+}
 
 
+
+
+int test_reverse_array(){
+    printf("4. test reverse_array()\n");
+    // normal even length
+    int arr[] = {1,2,3,4};
+    int expected[] = {4,3,2,1};
+    reverse_array(arr, 4);
+    int result = arrays_are_equal(arr,expected, 4);
+    if (result == 0){
+        printf("Error: Reverse Array normal even length Tests Failed");
+        return 0;
+    }
+
+
+
+    // normal odd
+    int arr_1[] = {2, 3, 4};
+    int expected_1[] = {4,3,2};
+    reverse_array(arr_1, 3);
+    result = arrays_are_equal(arr_1, expected_1, 3);
+    if (result == 0){
+        printf("Error: Reverse Array normal odd length Tests Failed");
+        return 0;
+    }
+
+    // edge [1]
+    int arr_2[] = {1};
+    int expected_2[] = {1};
+    reverse_array(arr_2, 1);
+    result = arrays_are_equal(arr_2, expected_2, 1);
+    if (result == 0){
+        printf("Error: Reverse Array normal odd length Tests Failed");
+        return 0;
+    }
+
+    return 1;
+
+
+}
+
+int test_double_array_size(){
+    // Normal
+    int arr[] = {1,2,3};
+    int expected[] = {1,2,3,0,0,0};
+    int* new_arr = double_array_size(arr, 3);
+    int result = arrays_are_equal(new_arr, expected, 6);
+    if (result == 0){
+        printf("Error: double_array_size normal case failed");
+        return 0;
+    }
+    return 1;
+}
 
 
 // this is a list of all the unit tests
 int (*unitTests[])() = {
         test_swap_one,
         test_create_array_of_ints_fib,
+        test_base_cases_fibs,
+        test_reverse_array,
+        test_double_array_size
         // add more test function names here
 };
 

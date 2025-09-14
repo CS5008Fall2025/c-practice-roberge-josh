@@ -46,7 +46,9 @@ typedef struct {
  * of the variables in the calling function. 
 **/
 void swap(int *a, int *b){
-
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 /**
@@ -88,6 +90,21 @@ void print_array(int *arr, int size)
  * here is a quick list of numbers: https://www.math.net/list-of-fibonacci-numbers
  **/
 int* create_array_of_ints_fib(int size){
+    if (size > 0){
+        int *fibs = (int *)malloc(size * sizeof(int));
+        fibs[0] = 1;
+        fibs[1] = 1;
+
+        // 
+        if (size >=2){
+        for (int i = 2; i < size; i++){
+            fibs[i] = fibs[i-2] + fibs[i-1];
+        }
+        }
+
+        return fibs;
+    }
+
     return NULL;
 }
 
