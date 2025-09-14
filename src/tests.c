@@ -115,6 +115,7 @@ int test_reverse_array(){
 }
 
 int test_double_array_size(){
+    printf("4. test double_array_size()\n");
     // Normal
     int arr[] = {1,2,3};
     int expected[] = {1,2,3,0,0,0};
@@ -128,13 +129,37 @@ int test_double_array_size(){
 }
 
 
+int test_copy_array_start_end_loop(){
+    printf("5. test copy_array_start_end_loop()\n");
+
+    // Normal Silice
+    int arr[] = {1, 2, 3, 4, 5};
+    int expected[] = {2, 3, 4};
+    int new_array_size = 3;
+    int* new_arr = copy_array_start_end_loop(arr, 5, 1, 3, &new_array_size );
+    int result = arrays_are_equal(new_arr, expected, 6);
+    if (result == 0){
+        printf("Error: normal slice failed for copy_array_start_end_loop");
+        return 0;
+    }
+
+    // wrapper slice
+
+
+
+    return 1;
+
+}
+
+
 // this is a list of all the unit tests
 int (*unitTests[])() = {
         test_swap_one,
         test_create_array_of_ints_fib,
         test_base_cases_fibs,
         test_reverse_array,
-        test_double_array_size
+        test_double_array_size,
+        test_copy_array_start_end_loop
         // add more test function names here
 };
 

@@ -170,6 +170,28 @@ int* double_array_size(int *arr, int size){
  * to get an OB1 error!
  */
 int* copy_array_start_end_loop(int *arr, int size, int start, int end, int *new_size) {
+    // Checking Parameters
+    if (start <0 || end <0 || start>=size || end>=size ){
+        return NULL;
+    }
+    // instantiating array
+    int *new_arr = (int*)malloc(sizeof(int) * (*new_size));
+    int stopper; // defines when to stop loop
+    // normal slice
+    if (start<=end){
+        stopper = end - start + 1;
+        for (int i=0; i <= stopper; i++){
+            new_arr[i] = arr[start + i];
+        }
+        return new_arr;
+    } else {
+        stopper = end - size + start + 1;
+        
+
+
+    }
+
+
     return NULL;
 }
 

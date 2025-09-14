@@ -114,6 +114,6 @@ int main(int argc, char const *argv[])
 {
     swap_practice();
     array_practice();
-    struct_practice();
+    // struct_practice();
     return 0;
 }
