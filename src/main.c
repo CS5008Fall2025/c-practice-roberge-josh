@@ -43,8 +43,10 @@ void array_practice() {
     printf("printing loop with wrap around: ");
     int* arr3 = copy_array_start_end_loop(arr, 12, 8, 3, &return_size);  // you will want to draw this out. 
     print_array(arr3, return_size);
-    free(arr3);
 
+
+    free(arr3);
+    printf("Reversing array: ");
     // reverse array
     reverse_array(arr, 12); // notice this modifies the original array!
     print_array(arr, 12);
@@ -53,10 +55,10 @@ void array_practice() {
     int *arr4 = double_array_size(arr, 12); 
     print_array(arr4, 24);
 
-    // free array from memory
-    free(arr); 
-    free(arr4);
-    printf("\n");
+    // // free array from memory
+    // free(arr); 
+    // free(arr4);
+    // printf("\n");
 
 }
 

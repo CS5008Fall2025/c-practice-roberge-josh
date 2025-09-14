@@ -174,26 +174,35 @@ int* copy_array_start_end_loop(int *arr, int size, int start, int end, int *new_
     if (start <0 || end <0 || start>=size || end>=size ){
         return NULL;
     }
-    // instantiating array
-    int *new_arr = (int*)malloc(sizeof(int) * (*new_size));
-    int stopper; // defines when to stop loop
+
     // normal slice
     if (start<=end){
-        stopper = end - start + 1;
-        for (int i=0; i <= stopper; i++){
+        *new_size = end - start + 1;
+        int *new_arr = (int*)malloc(sizeof(int) * (*new_size));
+        for (int i=0; i < *new_size; i++){
             new_arr[i] = arr[start + i];
         }
         return new_arr;
-    } else {
-        stopper = end - size + start + 1;
-        
-
-
     }
-
+    // less start > end
+    else {
+        *new_size = size - start + end + 1;
+        int *new_arr = (int*)malloc(sizeof(int) * (*new_size));
+        int stopper = size - start;
+        for (int i=0; i < stopper; i++){
+            new_arr[i] = arr[start+i];
+        }
+        // assign start splice
+        int starter = size - start;
+        for (int i = 0; i <= end; i++){
+            new_arr[starter + i] = arr[i];
+        }
+        return new_arr;
+    }
 
     return NULL;
 }
+
 
 /* 
 Practice with struts 
