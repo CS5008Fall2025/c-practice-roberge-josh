@@ -164,9 +164,28 @@ int test_copy_array_start_end_loop(){
     
 
     return 1;
-
 }
 
+
+int test_create_point(){
+    printf("5. test create_point()\n");
+    Point *p = create_point(4,5);
+    if (p->x != 4 && p->y != 5){
+        return 0;
+    }
+    return 1;
+}
+
+
+int test_create_polygon(){
+    printf("6. test create_polygon()\n");
+    Polygon *poly = create_polygon(5);
+    if (poly == NULL || poly-> points == NULL || poly->size != 5){
+        return 0;
+    }
+
+    return 1;
+}
 
 // this is a list of all the unit tests
 int (*unitTests[])() = {
@@ -176,6 +195,8 @@ int (*unitTests[])() = {
         test_reverse_array,
         test_double_array_size,
         test_copy_array_start_end_loop,
+        test_create_point,
+        test_create_polygon
         // add more test function names here
 };
 
