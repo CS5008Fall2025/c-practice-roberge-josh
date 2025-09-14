@@ -55,10 +55,10 @@ void array_practice() {
     int *arr4 = double_array_size(arr, 12); 
     print_array(arr4, 24);
 
-    // // free array from memory
-    // free(arr); 
-    // free(arr4);
-    // printf("\n");
+    // free array from memory
+    free(arr); 
+    free(arr4);
+    printf("\n");
 
 }
 
@@ -74,20 +74,20 @@ void struct_practice(){
     free(p1); // free memory
 
     // rectangle test
-    // Polygon* rect = create_rectangle(5, 10);
-    // print_polygon(rect);
+    Polygon* rect = create_rectangle(5, 10);
+    print_polygon(rect);
 
-    // double area = calculate_polygon_area(rect);
-    // printf("Area of rectangle: %.2f\n", area);
-    // free_polygon(rect);
+    double area = calculate_polygon_area(rect);
+    printf("Area of rectangle: %.2f\n", area);
+    free_polygon(rect);
 
     // triangle test
-    // Polygon* tri = create_triangle(5, 10);
-    // print_polygon(tri);
+    Polygon* tri = create_triangle(5, 10);
+    print_polygon(tri);
 
-    // area = calculate_polygon_area(tri);
-    // printf("Area of triangle: %.2f\n", area);
-    // free_polygon(tri);
+    area = calculate_polygon_area(tri);
+    printf("Area of triangle: %.2f\n", area);
+    free_polygon(tri);
 
     Polygon* hexagon = create_polygon(6);
     hexagon->points[0] = create_point(12, 10);
@@ -98,11 +98,9 @@ void struct_practice(){
     hexagon->points[5] = create_point(11, 8); 
 
     print_polygon(hexagon);
-    double area;
     area = calculate_polygon_area(hexagon);
     printf("Area of hexagon: %.2f\n", area);
     free_polygon(hexagon);
-
 
 }
 

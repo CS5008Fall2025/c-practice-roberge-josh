@@ -233,7 +233,7 @@ Point* create_point(int x, int y){
 */
 Polygon* create_polygon(int size){
     Polygon *p = (Polygon *)malloc(sizeof(Polygon));
-    p->points = (Point **)malloc(sizeof(Point) * size);
+    p->points = (Point **)malloc(sizeof(Point *) * size);
     p->size = size;
     
     // checking Allocation
@@ -264,7 +264,17 @@ void free_polygon(Polygon *p){
  * 0, height
 */
 Polygon* create_rectangle(int width, int height){
-    return NULL;
+    Polygon* rect = create_polygon(4);
+    if (rect == NULL){
+        return NULL;
+    }
+
+    rect->points[0] = create_point(0,0);
+    rect->points[1] = create_point(width,0);
+    rect->points[2] = create_point(width,height);
+    rect->points[3] = create_point(0,height);
+
+    return rect;
 }
 
 
@@ -277,7 +287,16 @@ Polygon* create_rectangle(int width, int height){
  * width, height
 */
 Polygon* create_triangle(int width, int height){
-    return NULL;
+    Polygon* tri = create_polygon(3);
+    if (tri == NULL){
+        return NULL;
+    }
+    
+    tri->points[0] = create_point(0,0);
+    tri->points[1] = create_point(width,0);
+    tri->points[2] = create_point(width,height);
+
+    return tri;
 }
 
 /**
