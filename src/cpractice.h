@@ -90,18 +90,20 @@ void print_array(int *arr, int size)
  * here is a quick list of numbers: https://www.math.net/list-of-fibonacci-numbers
  **/
 int* create_array_of_ints_fib(int size){
+    // base case for size 0 or less
     if (size > 0){
+        // malloca since we are returing an array
         int *fibs = (int *)malloc(size * sizeof(int));
-        fibs[0] = 1;
-        fibs[1] = 1;
-
-        // 
-        if (size >=2){
-        for (int i = 2; i < size; i++){
-            fibs[i] = fibs[i-2] + fibs[i-1];
+        if (size >= 1){
+            fibs[0] = 1;
         }
+        // size 2 or more
+        if (size >= 2){
+            fibs[1] = 1;
+            for (int i = 2; i < size; i++){
+                fibs[i] = fibs[i-2] + fibs[i-1];
+            }
         }
-
         return fibs;
     }
 
@@ -118,7 +120,10 @@ int* create_array_of_ints_fib(int size){
  * Consider using swap. 
 */
 void reverse_array(int *arr, int size){
-    
+    int stopper = size /2;
+    for (int i = 0; i < stopper; i++){
+        swap(&arr[i], &arr[size-1-i]);
+    }
 }
 
 
@@ -132,7 +137,12 @@ void reverse_array(int *arr, int size){
  * 
 */
 int* double_array_size(int *arr, int size){
-    return NULL;
+    int *new_arr = (int*)calloc(size * 2, sizeof(int));
+    // assign values
+    for (int i=0; i < size; i++){
+        new_arr[i] = arr[i];
+    }
+    return new_arr;
 }
 
 /**
@@ -254,6 +264,20 @@ void print_polygon(Polygon *p){
 double calculate_polygon_area(Polygon *p){
     return 0.0;
 }
+/**
+ * Checks to see if two arrays are equal.
+ * Assumption: It assumes that the size of the arrays are equivalent
+ * Note: this is really for testing, but I placed it here since it may be handy else where
+ */
+int arrays_are_equal(int *array_1, int *array_2, int size ){
+    for (int i = 0; i < size; i++) {
+        if (array_1[i] != array_2[i]) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
 
 #endif // C_PRACTICE_H
 
