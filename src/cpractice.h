@@ -330,7 +330,21 @@ void print_polygon(Polygon *p){
  * after area is summed across all points, divide by 2.0 and return the area.
 */
 double calculate_polygon_area(Polygon *p){
-    return 0.0;
+
+    double area = 0.0;
+
+    for (int i=0; i < p->size-1; i++){
+        area += (p -> points[i] -> x) * (p -> points[i+1] -> y);
+        area -= (p -> points[i+1] -> x) * (p -> points[i] -> y);
+    }
+
+    // wrap around point
+    area += (p -> points[p->size -1] -> x) * (p -> points[0] -> y);
+    area -= (p -> points[0] -> x) * (p -> points[p->size -1] -> y);
+
+    area = area/2.0;
+
+    return area < 0 ? -1 * area : area;
 }
 /**
  * Checks to see if two arrays are equal.

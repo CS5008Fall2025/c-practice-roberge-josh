@@ -187,6 +187,63 @@ int test_create_polygon(){
     return 1;
 }
 
+
+int test_calculate_polygon_area(){
+    printf("6. test calculate_polygon_area()\n");
+
+    Polygon* rect = create_rectangle(5, 10);
+    Polygon* tri = create_triangle(-5, -10);
+
+    double area_rect = calculate_polygon_area(rect);
+    if (area_rect != 50.0){
+        printf("Error: rectangle area calculation failed");
+        return 0;
+    }
+
+    double area_tri = calculate_polygon_area(tri);
+    if (area_tri != 25.0){
+        printf("Error: triangle area calculation failed");
+        return 0;
+    }
+    return 1;
+}
+
+
+int test_create_rectangle(){
+    printf("7. test create_rectangle()\n");
+    Polygon* rect = create_rectangle(5, 10);
+    if (rect == NULL || rect-> points == NULL || rect->size != 4){
+        printf("Error: create_rectangle allocation");
+        return 0;
+    }
+    if (rect->points[0]->x != 0 || rect->points[0]->y != 0
+        || rect->points[1]->x != 5 || rect->points[1]->y != 0
+        || rect->points[2]->x != 5 || rect->points[2]->y != 10
+        || rect->points[3]->x != 0 || rect->points[3]->y != 10
+    ){
+        printf("Error: create_rectangle point failed to allocate correctly");
+        return 0;
+    }
+    return 1;
+}
+
+int test_create_triangle(){
+    printf("8. test create_triangle()\n");
+    Polygon* tri = create_triangle(5, 10);
+    if (tri == NULL || tri-> points == NULL || tri->size != 3){
+        printf("Error: create_triangle allocation");
+        return 0;
+    }
+    if (tri->points[0]->x != 0 || tri->points[0]->y != 0
+        || tri->points[1]->x != 5 || tri->points[1]->y != 0
+        || tri->points[2]->x != 5 || tri->points[2]->y != 10
+    ){
+        printf("Error: create_triangle point failed to allocate correctly");
+        return 0;
+    }
+    return 1;
+}
+
 // this is a list of all the unit tests
 int (*unitTests[])() = {
         test_swap_one,
@@ -196,7 +253,10 @@ int (*unitTests[])() = {
         test_double_array_size,
         test_copy_array_start_end_loop,
         test_create_point,
-        test_create_polygon
+        test_create_polygon,
+        test_calculate_polygon_area,
+        test_create_rectangle,
+        test_create_triangle,
         // add more test function names here
 };
 
