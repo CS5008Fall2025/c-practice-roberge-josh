@@ -92,7 +92,7 @@ void print_array(int *arr, int size)
 int* create_array_of_ints_fib(int size){
     // base case for size 0 or less
     if (size > 0){
-        // malloca since we are returing an array
+        // malloca since we are returning an array
         int *fibs = (int *)malloc(size * sizeof(int));
         if (size >= 1){
             fibs[0] = 1;
@@ -175,7 +175,7 @@ int* copy_array_start_end_loop(int *arr, int size, int start, int end, int *new_
         return NULL;
     }
 
-    // normal slice
+    // normal slice start <= end
     if (start<=end){
         *new_size = end - start + 1;
         int *new_arr = (int*)malloc(sizeof(int) * (*new_size));
@@ -186,6 +186,7 @@ int* copy_array_start_end_loop(int *arr, int size, int start, int end, int *new_
     }
     // less start > end
     else {
+        // assign end splice
         *new_size = size - start + end + 1;
         int *new_arr = (int*)malloc(sizeof(int) * (*new_size));
         int stopper = size - start;

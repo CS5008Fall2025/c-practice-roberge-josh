@@ -133,7 +133,7 @@ int test_copy_array_start_end_loop(){
     printf("5. test copy_array_start_end_loop()\n");
 
     {
-        // Normal Slice
+    // Normal Slice
     int arr[] = {1, 2, 3, 4, 5};
     int expected[] = {2, 3, 4};
     int new_array_size = 3;
