@@ -170,6 +170,12 @@ For both these questions, are you are free to use what you did as the last secti
 
 1. Select one technical interview question (this module or previous) from the [technical interview list](https://github.com/CS5008-khoury/Resources/blob/main/TechInterviewQuestions.md) below and answer it in a few sentences. You can use any resource you like to answer the question.
 
+__Question: What exactly is a terminal and why is it important?__
+The terminal goes by many names: the command line, bash, PowerShell, console, and so on. This tool provides users with a programmatic way to interact with their operating system. This functionality may seem archaic, but it comes in handy in unique ways.
+Since you interact with the console via code, you can now script with it, and with scripting you receive all the benefits of programmable logic. For example, imagine you want to only transfer PDF, XLSX, and DOCX files to a server. This can easily be done with a simple for loop, conditional, and curl command via Linux. Can you imagine doing this by clicking and dragging 50,000 documents?
+The terminal is so handy it's often considered the standard for all developers and thus a common language. You could be a Python developer or a C developer or maybe love SAS. All these people probably know at least a little bit of Linux or Windows terminal commands. In fact, and this is a little anecdotal, several popular Python libraries are shifting more and more towards mainly command line interfaces—for example, spaCy.
+
+
 2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others. 
 
 ## Deeper Thinking
