@@ -176,7 +176,47 @@ Since you interact with the console via code, you can now script with it, and wi
 The terminal is so handy it's often considered the standard for all developers and thus a common language. You could be a Python developer or a C developer or maybe love SAS. All these people probably know at least a little bit of Linux or Windows terminal commands. In fact, and this is a little anecdotal, several popular Python libraries are shifting more and more towards mainly command line interfaces—for example, spaCy.
 
 
-2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others. 
+2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others.
+
+__Answer:__
+```c
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ * Question: Given an array of integers nums and an integer target, return 
+ * indices of the two numbers such that they addup to target.
+ * You may assume that each input would have exactly one solution, and you may not use the same element twice.
+ * You can return the answer in any order.
+ */
+int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
+        int current_i_th_value;
+        int addition_results;
+        int* my_result_vector;
+
+        for (int i = 0; i < numsSize; i++ ){
+            current_i_th_value = nums[i];
+            for(int j = i+1; j < numsSize; j++ ){
+                addition_results = current_i_th_value + nums[j];
+                if ( addition_results == target){
+                    my_result_vector = (int*)malloc(2 * sizeof(int));
+                    my_result_vector[0] = i;
+                    my_result_vector[1] = j;
+                    *returnSize = 2;
+                    return my_result_vector;
+                }
+            }
+        }
+    return NULL;
+};
+/**
+* Comments
+* I think the problem that was given was easy to quickly wrap my head around, and 
+* I even understood how to acquire a run of O(n) within a short amount of time. I 
+* think what I still find hard about C is the idea of pointers, and not having objects.
+* For example, it took me a minute to realize that the user would need a required length
+* to know how to run my function.
+*/
+```
+
 
 ## Deeper Thinking
 In Java and Python, do you think new objects are stored on the stack or the heap? Feel free to work through your thoughts as to why it would be better to store them on the stack or heap. You should consider pass by reference, and how that is similar to pointer in your answer. Feel free to use resources, but make sure to cite them, and include the citation below using ACM format. You will note LLMs are not valid references, but they can give you directions to valid references. Make sure to use your own words. 
