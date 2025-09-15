@@ -164,11 +164,13 @@ malloc and calloc are similar because they both define storage on the heap. They
 
 8. Looking at the struct Point and Polygon, we have a mix of values on the heap, and we make ample use of pointers. Take a moment to draw out how you think that looks after `create_triangle(2,3)` is called (see an example below). The important part of the drawing it to see that not everything is stored together in memory, but in different locations! Store the image file in your github repo and link it here. You can use any program to draw it such as [drawIO](https://app.diagrams.net/), or even draw it by hand and take a picture of it. 
 
+![solution to question 8](hw_additional_material/memory_profile_triangle.jpg)
 
 ## Technical Interview Practice Questions
 For both these questions, are you are free to use what you did as the last section on the team activities/answered as a group, or you can use a different question.
 
 1. Select one technical interview question (this module or previous) from the [technical interview list](https://github.com/CS5008-khoury/Resources/blob/main/TechInterviewQuestions.md) below and answer it in a few sentences. You can use any resource you like to answer the question.
+//hw_additional_material/memory_profile_triangle.jpg
 
 __Question: What exactly is a terminal and why is it important?__
 The terminal goes by many names: the command line, bash, PowerShell, console, and so on. This tool provides users with a programmatic way to interact with their operating system. This functionality may seem archaic, but it comes in handy in unique ways.
@@ -176,7 +178,7 @@ Since you interact with the console via code, you can now script with it, and wi
 The terminal is so handy it's often considered the standard for all developers and thus a common language. You could be a Python developer or a C developer or maybe love SAS. All these people probably know at least a little bit of Linux or Windows terminal commands. In fact, and this is a little anecdotal, several popular Python libraries are shifting more and more towards mainly command line interfaces—for example, spaCy.
 
 
-2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others.
+3. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others.
 
 __Answer:__
 ```c
