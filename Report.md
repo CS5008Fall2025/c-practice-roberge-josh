@@ -225,6 +225,16 @@ In Java and Python, do you think new objects are stored on the stack or the heap
 
 Answer here using a paragraph (not just bullet points). 
 
+__Answer:__
+
+![python memory](hw_additional_material/python_memory.png)
+
+In this paper will explore how Python manage stack and heap memory. Unlike C, Python and Java, high order languages, handles heap and stack memory dynamically. Understanding how each of these languages handles stack and heap allows us as developers to code properly and choose the right tool for the right job
+
+The diagram attempts to explain how memory gets allocated in python. Stack memory is generally used to store addresses or pointers while the heap is used to store the actual values of the objects they point to. 
+Let’s dive deeper into the example above. When we call `add` a new stack frame gets created which stores the instance of variables of add. When the function add is finished its stack frame gets deleted. In python the garbage collector keeps track of how many references an item has on heap. Once a heap object has no more reference, the garbage collector removes it from memory. It also important to note that integers are immutable so when we add `x+1` we are creating a new instance of an object.
+
+In the above example we also see that instances of person and also the class gets stored on the heap. When a new object is created, it gets stored on the heap along with all its corresponding values.
 
 
 
