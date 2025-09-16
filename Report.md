@@ -234,7 +234,7 @@ In this paper will explore how Python manage stack and heap memory. Unlike C, Py
 The diagram attempts to explain how memory gets allocated in python. Stack memory is generally used to store addresses or pointers while the heap is used to store the actual values of the objects they point to. 
 Let’s dive deeper into the example above. When we call `add` a new stack frame gets created which stores the instance of variables of add. When the function add is finished its stack frame gets deleted. In python the garbage collector keeps track of how many references an item has on heap. Once a heap object has no more reference, the garbage collector removes it from memory. It also important to note that integers are immutable so when we add `x+1` we are creating a new instance of an object.[2,6]
 
-In the above example we also see that instances of person and also the class gets stored on the heap. When a new object is created, it gets stored on the heap along with all its corresponding values.
+In the above example we also see that instances of person and also the class gets stored on the heap. When a new object is created, it gets stored on the heap along with all its corresponding values.In my opinion, and I'm sure this is situationally dependent, it makes sense for python to generally store objects on the heap and addresses on the stack. First, stack access is generally considered faster and therefore reading, writing and deleting addresses needs to be fast. Also, python defines what needs to be removed from the heap dependent on the address it has corresponding to an object, so we want this to be quick. Also the LIFO paradigm lends itself well to writing and deleting addresses to objects. Additionally, the heap is dynamic and can grow as the program progresses and therefore storing objects with a heavier byte footprint, without having direct control, makes intuitive sense for it to be stored on the heap.[7]
 
 
 
@@ -251,7 +251,9 @@ Add any references you use here. Use ACM style formatting, adding to the numbers
 
 5. C string (string.h) Library (no date) w3schools. Available at: https://www.w3schools.com/c/c_ref_string.php (Accessed: 15 September 2025).
 
-6. simplefunde (no date) Memory Allocation and Management in Python - simplified tutorial for beginners, YouTube. Available at: https://www.youtube.com/watch?v=arxWaw-E8QQ (Accessed: 15 September 2025). 
+6. simplefunde (no date) Memory Allocation and Management in Python - simplified tutorial for beginners, YouTube. Available at: https://www.youtube.com/watch?v=arxWaw-E8QQ (Accessed: 15 September 2025).
+
+7. Gribble, P. (n.d.). 7_Memory_Stack_vs_Heap. 7. memory : Stack vs heap. https://gribblelab.org/teaching/CBootCamp/7_Memory_Stack_vs_Heap.html#:~:text=Unlike%20the%20stack%2C%20the%20heap,be%20resized%20using%20realloc() 
 
 ## Resource/Help: Linking to images?
 To link an image, you use the following code
