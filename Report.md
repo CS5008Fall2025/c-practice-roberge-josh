@@ -136,27 +136,27 @@ __Answer:__
 malloc and calloc are similar because they both define storage on the heap. They differ in respect to how they define that storage. malloc merely sets aside a block of memory while calloc zeros out that memory. calloc and malloc also have different parameters. malloc just needs the size of the memory to set aside while calloc needs the unit size and the number of units.
 
 7. What are some common built in libraries used for C, list at least 3 and explain each one in your own words. Name a few (at least 3) functions in those libraries (hint: we used two of the most common ones in this assignment. There are many resources online that tell you functions in each library - you need to include at least 1 reference, but ideally for every library, you should have a reference to it)?
-   - Example: stdlib.h - provides functions for general-purpose operations including
+   - Example: stdlib.h - provides functions for general-purpose operations including 
               memory management and random numbers [1].
      - void * malloc(size_t) - allocates memory specified in size on the heap and returns a pointer to that location
      - void * calloc(size_t num_elements, size_t element_size) - contiguous allocation for allocating arrays with the default value of 0. Slower than malloc. 
      - int rand(void) - returns a random integer between 0 and RAND_MAX. Seed should be set before hand. 
 
 
-   1. math.h: this is `c` mathematical library and it contains basic and common math operations. 
+   1. math.h: this is `c` mathematical library and it contains basic and common math operations. [3]
       * ceil(x) -> returns a number rounded to the nearest whole number
       * log(x) ->  returns the natrual log of x
       * pow(x,y) -> calculates x^y
 
       reference: https://www.w3schools.com/c/c_ref_math.php
    
-   2. string.h: this library contains logic for manipulating and mutating strings in C 
+   2. string.h: this library contains logic for manipulating and mutating strings in C [4]
       * strcat() -> concats two string together
       * strlen() - > returns the length of a string
       * strtok() -> splits a string by a delimiter, and then you can index each string piece
  reference: https://www.w3schools.com/c/c_ref_string.php
 
-   3. stdio.h: This library contains all the functions for input and output logic in c.
+   3. stdio.h: This library contains all the functions for input and output logic in c.[5]
       * fclose() -> closes a file 
       * printf() -> writes a formated strings to the console
       * puts() -> prints a string to the console
@@ -232,7 +232,7 @@ __Answer:__
 In this paper will explore how Python manage stack and heap memory. Unlike C, Python and Java, high order languages, handles heap and stack memory dynamically. Understanding how each of these languages handles stack and heap allows us as developers to code properly and choose the right tool for the right job
 
 The diagram attempts to explain how memory gets allocated in python. Stack memory is generally used to store addresses or pointers while the heap is used to store the actual values of the objects they point to. 
-Let’s dive deeper into the example above. When we call `add` a new stack frame gets created which stores the instance of variables of add. When the function add is finished its stack frame gets deleted. In python the garbage collector keeps track of how many references an item has on heap. Once a heap object has no more reference, the garbage collector removes it from memory. It also important to note that integers are immutable so when we add `x+1` we are creating a new instance of an object.
+Let’s dive deeper into the example above. When we call `add` a new stack frame gets created which stores the instance of variables of add. When the function add is finished its stack frame gets deleted. In python the garbage collector keeps track of how many references an item has on heap. Once a heap object has no more reference, the garbage collector removes it from memory. It also important to note that integers are immutable so when we add `x+1` we are creating a new instance of an object.[2,6]
 
 In the above example we also see that instances of person and also the class gets stored on the heap. When a new object is created, it gets stored on the heap along with all its corresponding values.
 
@@ -243,7 +243,15 @@ Add any references you use here. Use ACM style formatting, adding to the numbers
 
 1. cppreference.com Contributors. 2025. Standard library header <stdlib.h>. cppreference.com. Retrieved May 1, 2025 from https://en.cppreference.com/w/c/header/stdlib
 
-2. ...
+2. #26 Stack And Heap in Java (no date) YouTube. Available at: https://www.youtube.com/watch?v=_GK3WoFFKUE (Accessed: 15 September 2025).
+
+3. C math (math.h) Library (no date) Reference. Available at: https://www.w3schools.com/c/c_ref_math.php (Accessed: 15 September 2025).
+   
+4. C stdio (stdio.h) Library (no date) Standard Input and Output Reference. Available at: https://www.w3schools.com/c/c_ref_stdio.php (Accessed: 15 September 2025).
+
+5. C string (string.h) Library (no date) w3schools. Available at: https://www.w3schools.com/c/c_ref_string.php (Accessed: 15 September 2025).
+
+6. simplefunde (no date) Memory Allocation and Management in Python - simplified tutorial for beginners, YouTube. Available at: https://www.youtube.com/watch?v=arxWaw-E8QQ (Accessed: 15 September 2025). 
 
 ## Resource/Help: Linking to images?
 To link an image, you use the following code
